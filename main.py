@@ -1,5 +1,5 @@
 #region import bailam_f
-from s00_bailam import hi as bailam_f
+from s00_bailam import get_name_in_email as bailam_f
 #endregion import bailam_f
 
 
@@ -8,10 +8,12 @@ from s02_chambai import chambai
 
 #region testkey_list
 testcase_list = [
-  {'input': {'name':'AI BTX'}, 'output':'Hi AI BTX',   'tc_name': 'tc0' },
-  {'input': ['HSU'],           'output':'Hi',          'tc_name': 'tc1' },
-  {'input': [None],            'output':'Hi',          'tc_name': 'tc2' },
-  {'input': [''],              'output':'Hi AI BTX',   'tc_name': 'tc3' },
+  {'input': {'email_list':['ai-btx@gmail.com']                   }, 'output':['ai-btx']                                       , 'tc_name': 'tc0' }, 
+  {'input': {'email_list':['user1@gmail.com', 'user2@gmail.com'] }, 'output':['user1', 'user2']                               , 'tc_name': 'tc1' }, 
+  {'input': {'email_list':[]                                     }, 'output':[]                                               , 'tc_name': 'tc2' }, 
+  {'input': {'email_list':['abb#ccc']                            }, 'output':['ERROR invaid email']                           , 'tc_name': 'tc3' }, 
+  {'input': {'email_list':[None]                                 }, 'output':['ERROR invaid email']                           , 'tc_name': 'tc4' }, 
+  {'input': {'email_list':[None, 'abb#ccc']                      }, 'output':['ERROR invaid email', 'ERROR invaid email']     , 'tc_name': 'tc5' }, 
 ]
 #endregion testkey_list
 
